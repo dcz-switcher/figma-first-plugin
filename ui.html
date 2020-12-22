@@ -127,7 +127,7 @@
   -->
   <section id="preview">
     <svg width="97" height="110" viewBox="0 0 97 110" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path fill-rule="evenodd" clip-rule="evenodd" d="M8.19697 36.0053C10.2014 15.7895 27.2568 0 48 0C68.751 0 85.8113 15.8013 87.8053 36.028C88.0344 36.0094 88.2661 36 88.5 36C93.1944 36 97 39.8056 97 44.5V51.5C97 56.1944 93.1944 60 88.5 60C88.3322 60 88.1654 59.9951 88 59.9855V70C88 92.0914 70.0914 110 48 110C25.9086 110 8 92.0914 8 70V59.9855C3.53831 59.7267 0 56.0266 0 51.5V44.5C0 39.907 3.6429 36.1649 8.19697 36.0053Z" fill="#FFCF37"/>
+      <path id="preview-head" fill-rule="evenodd" clip-rule="evenodd" d="M8.19697 36.0053C10.2014 15.7895 27.2568 0 48 0C68.751 0 85.8113 15.8013 87.8053 36.028C88.0344 36.0094 88.2661 36 88.5 36C93.1944 36 97 39.8056 97 44.5V51.5C97 56.1944 93.1944 60 88.5 60C88.3322 60 88.1654 59.9951 88 59.9855V70C88 92.0914 70.0914 110 48 110C25.9086 110 8 92.0914 8 70V59.9855C3.53831 59.7267 0 56.0266 0 51.5V44.5C0 39.907 3.6429 36.1649 8.19697 36.0053Z" fill="#FFCF37"/>
     </svg>
   </section>
   
@@ -137,32 +137,32 @@
 
   <section id="colors">
     <div class="radio-wrap">
-      <input type="radio" id="color-1" name="skin-color">
+      <input type="radio" id="color-1" name="skin-color" value="#5396FA">
       <label for="color-1"></label>
       <div class="radio-skin skin-color1"></div>
     </div>
     <div class="radio-wrap">
-      <input type="radio" id="color-2" name="skin-color" checked="checked">
+      <input type="radio" id="color-2" name="skin-color" checked="checked" value="#FFCF37">
       <label for="color-2"></label>
       <div class="radio-skin skin-color2"></div>
     </div>
     <div class="radio-wrap">
-      <input type="radio" id="color-3" name="skin-color">
+      <input type="radio" id="color-3" name="skin-color" value=" #F6D3B5">
       <label for="color-3"></label>
       <div class="radio-skin skin-color3"></div>
     </div>
     <div class="radio-wrap">
-      <input type="radio" id="color-4" name="skin-color">
+      <input type="radio" id="color-4" name="skin-color" value="#EDB893">
       <label for="color-4"></label>
       <div class="radio-skin skin-color4"></div>
     </div>
     <div class="radio-wrap">
-      <input type="radio" id="color-5" name="skin-color">
+      <input type="radio" id="color-5" name="skin-color" value="#916441">
       <label for="color-5"></label>
       <div class="radio-skin skin-color5"></div>
     </div>
     <div class="radio-wrap">
-      <input type="radio" id="color-6" name="skin-color">
+      <input type="radio" id="color-6" name="skin-color" value=" #402E23">
       <label for="color-6"></label>
       <div class="radio-skin skin-color6"></div>
     </div>
@@ -179,6 +179,14 @@
 
 
 <script>
+
+document.querySelectorAll("input[name='skin-color']").forEach((el) => {
+  el.addEventListener('change', function() {
+    //alert(document.querySelector("input[name='skin-color']:checked").value);
+    document.querySelector('#preview-head').setAttribute('fill', document.querySelector("input[name='skin-color']:checked").value);
+  })
+})
+
 
 document.getElementById('create').onclick = () => {
   /*
