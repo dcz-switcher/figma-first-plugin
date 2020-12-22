@@ -2,24 +2,56 @@
   *{
     margin: 0;
     padding: 0;
+    font-family: 'Inter', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   }
+
+  .skin-color1{ background-color: #5396FA; }
+  .skin-color2{ background-color: #FFCF37; }
+  .skin-color3{ background-color: #F6D3B5; }
+  .skin-color4{ background-color: #EDB893; }
+  .skin-color5{ background-color: #916441; }
+  .skin-color6{ background-color: #402E23; }
+
   #container{
     background-color: #1C1C1E;
     color: white;
+  }
+
+  #preview{
+    display: flex;
+    align-items: center;
+    justify-content: center;
     padding: 16px;
+    height: 150px;
+  }
+
+  #properties{
+    text-align: center;
+    color: #5396FA;
+    font-weight: bold;
+    font-size: 16px;
+    padding: 16px 0;
+    border-bottom: 1px solid #38383A;
+    margin-bottom: 16px;
+  }
+
+  #colors{
+    padding: 0 16px;
+    display: flex;
+    justify-content: space-around;
   }
 
   .color-circle{
-    width: 26px;
-    height: 26px;
-    border: 2px solid white;
+    width: 36px;
+    height: 36px;
     border-radius: 100%;
-    background-color: rgb(210, 180, 140);
     cursor: pointer;
+    
   }
 
   #actions{
-    margin: 10px;
+    padding: 16px;
+    text-align: right;
   }
 
   button {
@@ -27,15 +59,15 @@
     width: 64px;
     box-sizing: border-box;
     border-radius: 6px;
-    font-family: 'Inter', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-style: normal;
     font-size: 13px;
     text-align: center;
     border: none;
   }
   #cancel{
-    border: 1px solid rgba(0, 0, 0, 0.8);
-    background-color: white;
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    color: white;
+    background: none;
   }
 
   #create{
@@ -46,14 +78,34 @@
 </style>
 
 <div id="container">
-  <p>Count: <input id="count" value="5"></p>
-  <div id="colors">
-    <div class="color-circle"></div>
-  </div>
-  <div id="actions">
+  <!-- 
+    <p>Count: <input id="count" value="5"></p>
+  -->
+  <section id="preview">
+    <svg width="97" height="110" viewBox="0 0 97 110" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path fill-rule="evenodd" clip-rule="evenodd" d="M8.19697 36.0053C10.2014 15.7895 27.2568 0 48 0C68.751 0 85.8113 15.8013 87.8053 36.028C88.0344 36.0094 88.2661 36 88.5 36C93.1944 36 97 39.8056 97 44.5V51.5C97 56.1944 93.1944 60 88.5 60C88.3322 60 88.1654 59.9951 88 59.9855V70C88 92.0914 70.0914 110 48 110C25.9086 110 8 92.0914 8 70V59.9855C3.53831 59.7267 0 56.0266 0 51.5V44.5C0 39.907 3.6429 36.1649 8.19697 36.0053Z" fill="#FFCF37"/>
+    </svg>
+  </section>
+  
+  <section id="properties">
+    <div>Peau</div>
+  </section>
+
+  <section id="colors">
+    <div class="color-circle skin-color1"></div>
+    <div class="color-circle skin-color2"></div>
+    <div class="color-circle skin-color3"></div>
+    <div class="color-circle skin-color4"></div>
+    <div class="color-circle skin-color5"></div>
+    <div class="color-circle skin-color6"></div>
+  </section>
+  
+  <section id="actions">
     <button id="cancel">Cancel</button>
     <button id="create">Create</button>
-  </div>
+  </section>
+
+
 </div>
 
 
@@ -61,9 +113,11 @@
 <script>
 
 document.getElementById('create').onclick = () => {
+  /*
   const textbox = document.getElementById('count');
   const count = parseInt(textbox.value, 10);
   parent.postMessage({ pluginMessage: { type: 'create-rectangles', count } }, '*')
+  */
 }
 
 document.getElementById('cancel').onclick = () => {
