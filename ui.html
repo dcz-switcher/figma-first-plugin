@@ -45,9 +45,53 @@
     width: 36px;
     height: 36px;
     border-radius: 100%;
-    cursor: pointer;
-    
+    cursor: pointer;    
   }
+
+
+  .radio-wrap{
+    position: relative;
+  }
+
+  #colors input[type=radio]{
+    display: none;
+  }
+
+  #colors label{
+    width: 36px;
+    height: 36px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    cursor: pointer;
+  }
+
+  .radio-skin{
+    display: block;
+    position: relative;
+    width: 36px;
+    height: 36px;
+    border-radius: 100%;
+  }
+
+  .radio-skin::after{
+    display: block;
+    position: relative;
+    content: '';
+    width: 48px;
+    height: 48px;
+    top: -9px;
+    left: -9px;
+    border-radius: 100%;
+  }
+
+  #colors input[type=radio]:checked ~ .radio-skin::after{
+    border: 3px solid white;
+  }
+
+
+
 
   #actions{
     padding: 16px;
@@ -92,12 +136,36 @@
   </section>
 
   <section id="colors">
-    <div class="color-circle skin-color1"></div>
-    <div class="color-circle skin-color2"></div>
-    <div class="color-circle skin-color3"></div>
-    <div class="color-circle skin-color4"></div>
-    <div class="color-circle skin-color5"></div>
-    <div class="color-circle skin-color6"></div>
+    <div class="radio-wrap">
+      <input type="radio" id="color-1" name="skin-color">
+      <label for="color-1"></label>
+      <div class="radio-skin skin-color1"></div>
+    </div>
+    <div class="radio-wrap">
+      <input type="radio" id="color-2" name="skin-color" checked="checked">
+      <label for="color-2"></label>
+      <div class="radio-skin skin-color2"></div>
+    </div>
+    <div class="radio-wrap">
+      <input type="radio" id="color-3" name="skin-color">
+      <label for="color-3"></label>
+      <div class="radio-skin skin-color3"></div>
+    </div>
+    <div class="radio-wrap">
+      <input type="radio" id="color-4" name="skin-color">
+      <label for="color-4"></label>
+      <div class="radio-skin skin-color4"></div>
+    </div>
+    <div class="radio-wrap">
+      <input type="radio" id="color-5" name="skin-color">
+      <label for="color-5"></label>
+      <div class="radio-skin skin-color5"></div>
+    </div>
+    <div class="radio-wrap">
+      <input type="radio" id="color-6" name="skin-color">
+      <label for="color-6"></label>
+      <div class="radio-skin skin-color6"></div>
+    </div>
   </section>
   
   <section id="actions">
