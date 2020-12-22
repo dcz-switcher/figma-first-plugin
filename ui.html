@@ -1,0 +1,73 @@
+<style>
+  *{
+    margin: 0;
+    padding: 0;
+  }
+  #container{
+    background-color: #1C1C1E;
+    color: white;
+    padding: 16px;
+  }
+
+  .color-circle{
+    width: 26px;
+    height: 26px;
+    border: 2px solid white;
+    border-radius: 100%;
+    background-color: rgb(210, 180, 140);
+    cursor: pointer;
+  }
+
+  #actions{
+    margin: 10px;
+  }
+
+  button {
+    height: 30px;
+    width: 64px;
+    box-sizing: border-box;
+    border-radius: 6px;
+    font-family: 'Inter', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-style: normal;
+    font-size: 13px;
+    text-align: center;
+    border: none;
+  }
+  #cancel{
+    border: 1px solid rgba(0, 0, 0, 0.8);
+    background-color: white;
+  }
+
+  #create{
+    background: #18A0FB;
+    color: white;
+  }
+ 
+</style>
+
+<div id="container">
+  <p>Count: <input id="count" value="5"></p>
+  <div id="colors">
+    <div class="color-circle"></div>
+  </div>
+  <div id="actions">
+    <button id="cancel">Cancel</button>
+    <button id="create">Create</button>
+  </div>
+</div>
+
+
+
+<script>
+
+document.getElementById('create').onclick = () => {
+  const textbox = document.getElementById('count');
+  const count = parseInt(textbox.value, 10);
+  parent.postMessage({ pluginMessage: { type: 'create-rectangles', count } }, '*')
+}
+
+document.getElementById('cancel').onclick = () => {
+  parent.postMessage({ pluginMessage: { type: 'cancel' } }, '*')
+}
+
+</script>
