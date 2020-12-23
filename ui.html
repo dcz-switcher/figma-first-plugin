@@ -194,6 +194,8 @@ document.getElementById('create').onclick = () => {
   const count = parseInt(textbox.value, 10);
   parent.postMessage({ pluginMessage: { type: 'create-rectangles', count } }, '*')
   */
+ const skinColor = document.querySelector("input[name='skin-color']:checked").value;
+  parent.postMessage({ pluginMessage: { type: 'create-avatar', skinColor } }, '*');
 }
 
 document.getElementById('cancel').onclick = () => {
