@@ -43,7 +43,8 @@ figma.ui.onmessage = msg => {
     eye.resize(10, 10);
     eye.x = 30;
     eye.y = 40;
-    eye.fills = [{type: 'SOLID', color: {r: 0.82, g: 0.7, b: 0.55}}];
+    eye.fills = [{type: 'SOLID', color: {r: 0, g: 0, b: 0}}];
+    eye.cornerRadius = 40;
     console.log(eye.constraints);
     eye.constraints = {horizontal: "SCALE", vertical : "SCALE"};
 
