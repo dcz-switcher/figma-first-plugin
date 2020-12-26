@@ -143,23 +143,25 @@
 
   button {
     height: 30px;
-    width: 64px;
     box-sizing: border-box;
     border-radius: 6px;
     font-style: normal;
     font-size: 13px;
     text-align: center;
     border: none;
+    cursor: pointer;
+    padding: 8px 12px;
   }
-  #cancel{
+
+  .btn-primary{
+    background: #18A0FB;
+    color: white;
+  }
+
+  .btn-ghost{
     border: 1px solid rgba(255, 255, 255, 0.8);
     color: white;
     background: none;
-  }
-
-  #create{
-    background: #18A0FB;
-    color: white;
   }
  
 </style>
@@ -220,8 +222,7 @@
   </section>
   
   <section id="actions">
-    <button id="cancel">Cancel</button>
-    <button id="create">Create</button>
+    <button id="create" class="btn-primary">Create character</button>
   </section>
 
 
