@@ -1,4 +1,6 @@
 
+const UIDimensions = {width: 330, height: 500};
+
 const EYE = { default: '<svg></svg>', twink: '<svg></svg>', smile: '<svg></svg>'};
 const MOUTH = { default: '<svg></svg>', twink: '<svg></svg>', smile: '<svg></svg>'};
 const NOSE = { default: '<svg></svg>', small: '<svg></svg>', long: '<svg></svg>'};
@@ -13,7 +15,7 @@ const HEAD = '<svg width="98" height="108" viewBox="0 0 98 108" fill="none" xmln
 const EYE_1 = '<svg width="62" height="36" viewBox="0 0 62 36" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="5.11731" y="1.70374" width="22" height="32" rx="11" fill="white"/><rect x="36" y="2" width="22" height="32" rx="11" fill="white"/><rect x="13.0432" y="9.62964" width="10" height="16" rx="5" fill="#434243"/><rect x="39.963" y="9.9259" width="10" height="16" rx="5" fill="#434243"/></svg>';
 
 // This shows the HTML page in "ui.html".
-figma.showUI(__html__, {width: 340, height: 348});
+figma.showUI(__html__, UIDimensions);
 
 
 figma.ui.onmessage = msg => {

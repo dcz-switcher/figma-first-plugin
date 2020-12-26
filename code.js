@@ -1,3 +1,4 @@
+const UIDimensions = { width: 330, height: 500 };
 const EYE = { default: '<svg></svg>', twink: '<svg></svg>', smile: '<svg></svg>' };
 const MOUTH = { default: '<svg></svg>', twink: '<svg></svg>', smile: '<svg></svg>' };
 const NOSE = { default: '<svg></svg>', small: '<svg></svg>', long: '<svg></svg>' };
@@ -8,7 +9,7 @@ const SKIN_COLORS = { skinColor1: "#5396FA", skinColor2: "#FFCF37", skinColor3: 
 const HEAD = '<svg width="98" height="108" viewBox="0 0 98 108" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M10.0182 39.0711C10.0182 17.4927 27.511 0 49.0894 0C70.6678 0 88.1605 17.4927 88.1605 39.0711V40.3612C93.6109 40.4564 98 44.8964 98 50.3596C98 55.8229 93.6109 60.2629 88.1605 60.3581V68.9289C88.1605 90.5073 70.6678 108 49.0894 108C27.511 108 10.0182 90.5073 10.0182 68.9289V60C4.48532 60 0 55.5228 0 50C0 44.4772 4.48532 40 10.0182 40V39.0711Z" fill="#F3C09A"/></svg>';
 const EYE_1 = '<svg width="62" height="36" viewBox="0 0 62 36" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="5.11731" y="1.70374" width="22" height="32" rx="11" fill="white"/><rect x="36" y="2" width="22" height="32" rx="11" fill="white"/><rect x="13.0432" y="9.62964" width="10" height="16" rx="5" fill="#434243"/><rect x="39.963" y="9.9259" width="10" height="16" rx="5" fill="#434243"/></svg>';
 // This shows the HTML page in "ui.html".
-figma.showUI(__html__, { width: 340, height: 348 });
+figma.showUI(__html__, UIDimensions);
 figma.ui.onmessage = msg => {
     /*
       if (msg.type === 'create-rectangles') {

@@ -13,16 +13,51 @@
   .skin-color6{ background-color: #402E23; }
 
   #container{
+    display: flex;
+    flex-direction: column;
     background-color: #fff;
     color: white;
+    width: 330px;
   }
+
+  #builder{
+    display: flex;
+    border-bottom: 1px solid #E5E5E5;
+    padding: 16px;
+  }
+
+  #menu{ width: 140px; }
+
+
+  #menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  #menu li {
+    color: #B0B0B0;
+    line-height: 22px;
+    font-size: 18px;
+    font-weight: normal;
+    margin: 4px 0;
+  }
+
+  #menu a {
+    display: flex;
+    text-decoration: none;
+    color: #B0B0B0;
+    padding: 4px 4px 4px 0;
+  }
+
+  #menu a:hover{ font-weight: bold; font-size: 20px; }
+  #menu a.selected{ color: #5396FA; font-weight: bold; cursor: default;}
+  #menu a:hover.selected{ font-size: inherit;}
 
   #preview{
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 16px;
-    height: 150px;
+    width: 190px;
   }
 
   #layer-stack{
@@ -42,18 +77,9 @@
     top: 30px;
   }
 
-  #properties{
-    text-align: center;
-    color: #5396FA;
-    font-weight: bold;
-    font-size: 16px;
-    padding: 16px 0;
-    border-bottom: 1px solid #E5E5E5;
-    margin-bottom: 16px;
-  }
 
   #colors{
-    padding: 0 16px;
+    padding: 24px 16px;
     display: flex;
     justify-content: space-between;
   }
@@ -139,20 +165,27 @@
 </style>
 
 <div id="container">
-  <!-- 
-    <p>Count: <input id="count" value="5"></p>
-  -->
-  <section id="preview">
-    <div id="layer-stack">
-      <div class="layer" id="head-layer"></div>
-      <div class="layer" id="eye-layer"></div>
+
+  <section id="builder">
+    <div id="menu">
+      <ul>
+        <li><a class="selected" href="#skin">Skin</a></li>
+        <li><a href="#eyes">Eyes</a></li>
+        <li><a href="#mouth">Mouth</a></li>
+        <li><a href="#hair">Hair</a></li>
+        <li><a href="#facehairs">Face Hairs</a></li>
+        <li><a href="#clothes">Clothes</a></li>
+        <li><a href="#accessories">Accessories</a></li>
+      </ul>
+    </div>
+    <div id="preview">
+      <div id="layer-stack">
+        <div class="layer" id="head-layer"></div>
+        <div class="layer" id="eye-layer"></div>
+      </div>
     </div>
   </section>
   
-  <section id="properties">
-    <div>Peau</div>
-  </section>
-
   <section id="colors">
     <div class="radio-wrap">
       <input type="radio" id="color-1" name="skin-color" value="#5396FA">
