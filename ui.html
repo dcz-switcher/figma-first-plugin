@@ -42,7 +42,6 @@
     line-height: 22px;
     font-size: 18px;
     font-weight: normal;
-    margin: 4px 0;
   }
 
   #menu a {
@@ -53,8 +52,8 @@
   }
 
   #menu a:hover{ font-weight: bold; font-size: 20px; }
-  #menu a.selected{ color: #5396FA; font-weight: bold; cursor: default;}
-  #menu a:hover.selected{ font-size: inherit;}
+  #menu a.selected{ color: #5396FA; font-weight: bold; font-size: 20px; cursor: default;}
+  
 
   #preview{
     display: flex;
@@ -78,6 +77,22 @@
   #eye-layer{
     left: 18px;
     top: 30px;
+  }
+
+  #panels #panel-stack{
+    position: relative;
+  }
+
+  #panel-stack .panel{
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 100%;
+    display: none;
+  }
+
+  #panel-stack .panel.selected{
+    display: block;
   }
 
 
@@ -177,13 +192,13 @@
   <section id="builder">
     <div id="menu">
       <ul>
-        <li><a class="selected" href="#skin">Skin</a></li>
-        <li><a href="#eyes">Eyes</a></li>
-        <li><a href="#mouth">Mouth</a></li>
-        <li><a href="#hair">Hair</a></li>
-        <li><a href="#facehairs">Face Hairs</a></li>
-        <li><a href="#clothes">Clothes</a></li>
-        <li><a href="#accessories">Accessories</a></li>
+        <li><a href="#skin-panel" class="selected">Skin</a></li>
+        <li><a href="#eyes-panel">Eyes</a></li>
+        <li><a href="#mouth-panel">Mouth</a></li>
+        <li><a href="#hair-panel">Hair</a></li>
+        <li><a href="#facehairs-panel">Face Hairs</a></li>
+        <li><a href="#clothes-panel">Clothes</a></li>
+        <li><a href="#accessories-panel">Accessories</a></li>
       </ul>
     </div>
     <div id="preview">
@@ -194,36 +209,45 @@
     </div>
   </section>
   
-  <section id="colors">
-    <div class="radio-wrap">
-      <input type="radio" id="color-1" name="skin-color" value="#5396FA">
-      <label for="color-1"></label>
-      <div class="radio-skin skin-color1"></div>
-    </div>
-    <div class="radio-wrap">
-      <input type="radio" id="color-2" name="skin-color" checked="checked" value="#FFCF37">
-      <label for="color-2"></label>
-      <div class="radio-skin skin-color2"></div>
-    </div>
-    <div class="radio-wrap">
-      <input type="radio" id="color-3" name="skin-color" value=" #F6D3B5">
-      <label for="color-3"></label>
-      <div class="radio-skin skin-color3"></div>
-    </div>
-    <div class="radio-wrap">
-      <input type="radio" id="color-4" name="skin-color" value="#EDB893">
-      <label for="color-4"></label>
-      <div class="radio-skin skin-color4"></div>
-    </div>
-    <div class="radio-wrap">
-      <input type="radio" id="color-5" name="skin-color" value="#916441">
-      <label for="color-5"></label>
-      <div class="radio-skin skin-color5"></div>
-    </div>
-    <div class="radio-wrap">
-      <input type="radio" id="color-6" name="skin-color" value=" #402E23">
-      <label for="color-6"></label>
-      <div class="radio-skin skin-color6"></div>
+  <section id="panels">
+    <div id="panel-stack">
+      <div id="skin-panel" class="panel selected">
+        <div id="colors">
+          <div class="radio-wrap">
+            <input type="radio" id="color-1" name="skin-color" value="#5396FA">
+            <label for="color-1"></label>
+            <div class="radio-skin skin-color1"></div>
+          </div>
+          <div class="radio-wrap">
+            <input type="radio" id="color-2" name="skin-color" checked="checked" value="#FFCF37">
+            <label for="color-2"></label>
+            <div class="radio-skin skin-color2"></div>
+          </div>
+          <div class="radio-wrap">
+            <input type="radio" id="color-3" name="skin-color" value=" #F6D3B5">
+            <label for="color-3"></label>
+            <div class="radio-skin skin-color3"></div>
+          </div>
+          <div class="radio-wrap">
+            <input type="radio" id="color-4" name="skin-color" value="#EDB893">
+            <label for="color-4"></label>
+            <div class="radio-skin skin-color4"></div>
+          </div>
+          <div class="radio-wrap">
+            <input type="radio" id="color-5" name="skin-color" value="#916441">
+            <label for="color-5"></label>
+            <div class="radio-skin skin-color5"></div>
+          </div>
+          <div class="radio-wrap">
+            <input type="radio" id="color-6" name="skin-color" value=" #402E23">
+            <label for="color-6"></label>
+            <div class="radio-skin skin-color6"></div>
+          </div>
+        </div>
+      </div>
+      <div id="eyes-panel" class="panel">
+        <div style="background-color: red;">Eyes panel</div>
+      </div>
     </div>
   </section>
   
@@ -242,16 +266,48 @@
   const EYE_1 = '<svg width="62" height="36" viewBox="0 0 62 36" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="5.11731" y="1.70374" width="22" height="32" rx="11" fill="white"/><rect x="36" y="2" width="22" height="32" rx="11" fill="white"/><rect x="13.0432" y="9.62964" width="10" height="16" rx="5" fill="#434243"/><rect x="39.963" y="9.9259" width="10" height="16" rx="5" fill="#434243"/></svg>';
   const EYE_2 = '<svg width="62" height="36" viewBox="0 0 62 36" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M5.11731 18V22.7037C5.11731 28.7789 10.0422 33.7037 16.1173 33.7037C22.1924 33.7037 27.1173 28.7789 27.1173 22.7037V18H5.11731Z" fill="white"/><path fill-rule="evenodd" clip-rule="evenodd" d="M13.0432 18V20.6296C13.0432 23.3911 15.2818 25.6296 18.0432 25.6296C20.8046 25.6296 23.0432 23.3911 23.0432 20.6296V18H13.0432Z" fill="#434243"/><path fill-rule="evenodd" clip-rule="evenodd" d="M36 18V23C36 29.0751 40.9249 34 47 34C53.0751 34 58 29.0751 58 23V18H36Z" fill="white"/><path fill-rule="evenodd" clip-rule="evenodd" d="M39.963 18V20.9259C39.963 23.6873 42.2016 25.9259 44.963 25.9259C47.7244 25.9259 49.963 23.6873 49.963 20.9259V18H39.963Z" fill="#434243"/></svg>';
 
-  let $preview = document.querySelector('#preview');
-  let $headLayer = $preview.querySelector('#head-layer');
-  let $eyeLayer = document.querySelector('#eye-layer');
+  const $preview = document.querySelector('#preview');
+  const $headLayer = $preview.querySelector('#head-layer');
+  const $eyeLayer = document.querySelector('#eye-layer');
+  const $menu = document.querySelector('#menu ul');
+  const $panelStack = document.querySelector('#panel-stack');
 
-  /** avatar preview init */
+
+    /** avatar preview init */
   document.addEventListener('DOMContentLoaded', () => {
    $headLayer.innerHTML = HEAD;
    $eyeLayer.innerHTML = EYE_1;
   });
 
+/**
+ * navigation
+ */
+  $menu.addEventListener('click', (e) => {
+    if (e.target.tagName === 'A' 
+      && e.target.href !== undefined
+      && !e.target.classList.contains('selected')) {
+        const href = e.target.href.substring(e.target.href.lastIndexOf('#')+1);
+        try {
+          if ($panelStack.querySelector('#' + href)){
+            $panelStack.querySelector('.panel.selected').classList.remove('selected');
+            $panelStack.querySelector('#' + href).classList.add('selected');
+
+            $menu.querySelector('a.selected').classList.remove('selected');
+            e.target.classList.add('selected');
+          }
+
+        }catch(e){
+          console.log('error');
+          console.log(e);
+        }
+        
+        /*
+        if ($panelStack.querySelector('#' + href) !== undefined){
+          $panelStack.querySelector('#' + href).classList.add('selected');
+        }
+        */
+    }
+  });
 
   /** Change head color */
   document.querySelectorAll("input[name='skin-color']").forEach((el) => {
@@ -271,9 +327,9 @@
   const skinColor = document.querySelector("input[name='skin-color']:checked").value;
     parent.postMessage({ pluginMessage: { type: 'create-avatar', skinColor } }, '*');
   }
-
+/*
   document.getElementById('cancel').onclick = () => {
     parent.postMessage({ pluginMessage: { type: 'cancel' } }, '*')
   }
-
+*/
 </script>

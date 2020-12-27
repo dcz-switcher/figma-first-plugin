@@ -24,7 +24,7 @@ figma.ui.onmessage = msg => {
     if (msg.type === 'create-avatar') {
         console.log('create avatar with skin color ' + msg.skinColor);
         const avatarNode = figma.createNodeFromSvg(HEAD);
-        avatarNode.name = "Avatar";
+        avatarNode.name = "Character";
         const head = avatarNode.children[0];
         head.name = "Head";
         //head.fills = [{type: 'SOLID', color: {r: 1, g: 0.7, b: 0.55}}];
@@ -44,7 +44,7 @@ figma.ui.onmessage = msg => {
         */
         /** add eye */
         const eyeNode = figma.createNodeFromSvg(EYE_1);
-        eyeNode.name = "Eye";
+        eyeNode.name = "Eyes";
         eyeNode.constraints = { horizontal: "SCALE", vertical: "SCALE" };
         eyeNode.x = 18;
         eyeNode.y = 30;
