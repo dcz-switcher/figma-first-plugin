@@ -88,7 +88,9 @@
     top:0;
     left: 0;
     width: 100%;
+    box-sizing: border-box;
     display: none;
+    padding: 16px;
   }
 
   #panel-stack .panel.selected{
@@ -97,7 +99,6 @@
 
 
   #colors{
-    padding: 24px 16px;
     display: flex;
     justify-content: space-between;
   }
@@ -211,7 +212,7 @@
   
   <section id="panels">
     <div id="panel-stack">
-      <div id="skin-panel" class="panel selected">
+      <div id="skin-panel" class="panel">
         <div id="colors">
           <div class="radio-wrap">
             <input type="radio" id="color-1" name="skin-color" value="#5396FA">
@@ -245,8 +246,14 @@
           </div>
         </div>
       </div>
-      <div id="eyes-panel" class="panel">
-        <div style="background-color: red;">Eyes panel</div>
+      <div id="eyes-panel" class="panel selected">
+        <div id="eyes-types">
+          <div class="eyes-type">
+            <input type="radio" id="eye-1" name="eye" value="EYE_1">
+            <label for="eye-1"></label>
+            <div class="radio-eye eye-1"></div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -273,7 +280,7 @@
   const $panelStack = document.querySelector('#panel-stack');
 
 
-    /** avatar preview init */
+    /** Initialization */
   document.addEventListener('DOMContentLoaded', () => {
    $headLayer.innerHTML = HEAD;
    $eyeLayer.innerHTML = EYE_1;
@@ -295,17 +302,10 @@
             $menu.querySelector('a.selected').classList.remove('selected');
             e.target.classList.add('selected');
           }
-
         }catch(e){
           console.log('error');
           console.log(e);
         }
-        
-        /*
-        if ($panelStack.querySelector('#' + href) !== undefined){
-          $panelStack.querySelector('#' + href).classList.add('selected');
-        }
-        */
     }
   });
 
