@@ -153,8 +153,18 @@
     border-radius: 6px;
   }
   
-  .radio-shape.square .shape{}
-  .radio-shape.square .shape::after{}
+  .radio-shape.square .shape{
+    width: 48px;
+    height: 48px;
+    border-radius: 4px;
+  }
+  .radio-shape.square .shape::after{
+    width: 58px;
+    height: 58px;
+    top: -9px;
+    left: -9px;
+    border-radius: 6px;    
+  }
 
 
 
@@ -315,10 +325,10 @@
             <label for="radio-id-1"></label>
             <div class="shape skin-color6"></div>
           </div>
-          <div class="radio-shape circle">
+          <div class="radio-shape square">
             <input type="radio" id="radio-id-2" name="shape" value="2">
             <label for="radio-id-2"></label>
-            <div class="shape skin-color5"></div>
+            <div class="shape skin-color2"></div>
           </div>
           <div class="radio-shape rectangle">
             <input type="radio" id="radio-id-3" name="shape" value="3">
