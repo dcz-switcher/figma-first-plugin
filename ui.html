@@ -96,6 +96,54 @@
   #panel-stack .panel.selected{
     display: block;
   }
+  
+  
+  /* RADIO SHAPE */
+  .radio-shape-group{
+    display: flex;
+    justify-content: space-around;
+  }
+  .radio-shape{position: relative; box-sizing: border-box;}
+  .radio-shape input[type=radio]{display: none;}
+  .radio-shape label{
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    cursor: pointer;
+    width: 100%;
+    height: 100%;
+  }
+  .radio-shape .shape{
+    display: block;
+    position: relative;
+  }
+  .radio-shape .shape::after{
+    display: block;
+    position: relative;
+    content: '';
+  }
+  
+  .radio-shape.circle .shape{
+    width: 36px;
+    height: 36px;
+    border-radius: 100%;
+  }
+  .radio-shape.square .shape{}
+  .radio-shape.rectangle .shape{}
+
+  .radio-shape.circle .shape::after{
+    width: 46px;
+    height: 46px;
+    top: -9px;
+    left: -9px;
+    border-radius: 100%;
+  }
+
+  .radio-shape input[type=radio]:checked ~ .shape::after{
+    border: 4px solid #5A5A5F;
+  }
+
 
 
   #colors{
@@ -109,7 +157,6 @@
     border-radius: 100%;
     cursor: pointer;    
   }
-
 
   .radio-wrap{
     position: relative;
@@ -247,12 +294,19 @@
         </div>
       </div>
       <div id="eyes-panel" class="panel selected">
-        <div id="eyes-types">
-          <div class="eyes-type">
-            <input type="radio" id="eye-1" name="eye" value="EYE_1">
-            <label for="eye-1"></label>
-            <div class="radio-eye eye-1"></div>
+        <div id="eyes-radios" class="radio-shape-group">
+          
+          <div class="radio-shape circle">
+            <input type="radio" id="radio-id-1" name="shape" value="1">
+            <label for="radio-id-1"></label>
+            <div class="shape skin-color6"></div>
           </div>
+          <div class="radio-shape circle">
+            <input type="radio" id="radio-id-2" name="shape" value="2">
+            <label for="radio-id-2"></label>
+            <div class="shape skin-color5"></div>
+          </div>
+
         </div>
       </div>
     </div>
