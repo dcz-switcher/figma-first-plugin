@@ -124,14 +124,15 @@
     content: '';
   }
   
+  .radio-shape input[type=radio]:checked ~ .shape::after{
+    border: 4px solid #5A5A5F;
+  }
+
   .radio-shape.circle .shape{
     width: 36px;
     height: 36px;
     border-radius: 100%;
   }
-  .radio-shape.square .shape{}
-  .radio-shape.rectangle .shape{}
-
   .radio-shape.circle .shape::after{
     width: 46px;
     height: 46px;
@@ -139,10 +140,23 @@
     left: -9px;
     border-radius: 100%;
   }
-
-  .radio-shape input[type=radio]:checked ~ .shape::after{
-    border: 4px solid #5A5A5F;
+  .radio-shape.rectangle .shape{
+    width: 68px;
+    height: 48px;
+    border-radius: 4px;
   }
+  .radio-shape.rectangle .shape::after{
+    width: 78px;
+    height: 58px;
+    top: -9px;
+    left: -9px;
+    border-radius: 6px;
+  }
+  
+  .radio-shape.square .shape{}
+  .radio-shape.square .shape::after{}
+
+
 
 
 
@@ -304,6 +318,11 @@
           <div class="radio-shape circle">
             <input type="radio" id="radio-id-2" name="shape" value="2">
             <label for="radio-id-2"></label>
+            <div class="shape skin-color5"></div>
+          </div>
+          <div class="radio-shape rectangle">
+            <input type="radio" id="radio-id-3" name="shape" value="3">
+            <label for="radio-id-3"></label>
             <div class="shape skin-color5"></div>
           </div>
 
